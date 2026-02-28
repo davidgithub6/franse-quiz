@@ -1,0 +1,114 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Roboto', 'Outfit', sans-serif;
+}
+
+:root {
+  /* Premium Dark Mode Color Palette */
+  --bg-color: #121212;
+  --panel-bg: #1e1e1e;
+  --text-main: #f5f5f5;
+  --text-muted: #a0a0a0;
+  
+  /* Duolingo Inspired Accents */
+  --primary: #58cc02; /* Green */
+  --primary-hover: #46a302;
+  --primary-shadow: #58a700;
+  
+  --secondary: #1cb0f6; /* Blue */
+  --secondary-hover: #1899d6;
+  --secondary-shadow: #1181b6;
+  
+  --danger: #ff4b4b; /* Red */
+  --danger-hover: #e33e3e;
+  --danger-shadow: #cc3636;
+  
+  --option-bg: #2a2a2a;
+  --option-border: #3a3a3a;
+  --option-hover: #333333;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden; /* Avoid scrollbars during animations */
+}
+
+#root {
+  width: 100%;
+  max-width: 600px;
+  height: 100dvh;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Common premium button style */
+.btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.1s ease;
+  box-shadow: 0 4px 0 var(--primary-shadow);
+  width: 100%;
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--primary-shadow);
+}
+
+.btn:disabled {
+  background-color: #444;
+  color: #888;
+  box-shadow: 0 4px 0 #333;
+  cursor: not-allowed;
+}
+
+.btn.secondary {
+  background-color: var(--secondary);
+  box-shadow: 0 4px 0 var(--secondary-shadow);
+}
+
+.btn.secondary:active {
+  box-shadow: 0 0 0 var(--secondary-shadow);
+}
+
+.btn.danger {
+  background-color: var(--danger);
+  box-shadow: 0 4px 0 var(--danger-shadow);
+}
+
+.btn.danger:active {
+  box-shadow: 0 0 0 var(--danger-shadow);
+}

@@ -1,0 +1,32 @@
+.question-card {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.question-image-container {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.question-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.question-image:hover {
+    transform: scale(1.05);
+}
+
+.question-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text-main);
+    text-align: center;
+}

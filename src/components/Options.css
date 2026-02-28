@@ -1,0 +1,52 @@
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.option-btn {
+    background-color: var(--option-bg);
+    border: 2px solid var(--option-border);
+    color: var(--text-main);
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: var(--option-hover);
+    border-color: #555;
+    transform: translateY(-2px);
+}
+
+.option-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.option-btn.selected {
+    border-color: var(--secondary);
+    background-color: rgba(28, 176, 246, 0.1);
+}
+
+.option-btn.correct {
+    border-color: var(--primary);
+    background-color: rgba(88, 204, 2, 0.1);
+    color: var(--primary);
+}
+
+.option-btn.incorrect {
+    border-color: var(--danger);
+    background-color: rgba(255, 75, 75, 0.1);
+    color: var(--danger);
+}
+
+.option-btn.disabled {
+    opacity: 0.6;
+}

@@ -1,0 +1,74 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.start-screen,
+.end-screen,
+.quiz-screen {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.start-screen,
+.end-screen {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.start-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.start-screen p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.quiz-screen {
+  justify-content: flex-start;
+  padding-bottom: 100px;
+  /* Space for the feedback overlay or final button */
+}
+
+.quiz-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-bottom: 24px;
+}
+
+/* Hide scrollbar for standard browsers */
+.quiz-content::-webkit-scrollbar {
+  display: none;
+}
+
+.quiz-content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.end-screen h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.score-display {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
