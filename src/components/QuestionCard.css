@@ -9,18 +9,24 @@
     overflow: hidden;
     margin-bottom: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #111;
+    /* dark bg behind portrait-style images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .question-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    max-height: 260px;
+    object-fit: contain;
+    /* show full image, never crop */
     display: block;
     transition: transform 0.3s ease;
 }
 
 .question-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .question-text {
