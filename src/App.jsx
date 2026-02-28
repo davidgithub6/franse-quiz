@@ -19,21 +19,26 @@ function App() {
   const [isCorrect, setIsCorrect] = useState(false);
 
   const [score, setScore] = useState(0);
-  const totalQuestions = questions.length;
+  const [totalQuestions, setTotalQuestions] = useState(0);
   // Progress counter
   const [progress, setProgress] = useState(0);
   // Track if we are in the 'review' phase
   const [isReviewPhase, setIsReviewPhase] = useState(false);
 
   const startQuiz = () => {
-    setCurrentQueue([...questions]);
+    // Select 10 random questions from the pool
+    const shuffled = [...questions].sort(() => 0.5 - Math.random());
+    const selectedQuestions = shuffled.slice(0, 10);
+
+    setTotalQuestions(selectedQuestions.length);
+    setCurrentQueue(selectedQuestions);
     setMistakesQueue([]);
     setScore(0);
     setProgress(0);
     setIsReviewPhase(false);
 
     // Set first question
-    setActiveQuestion(questions[0]);
+    setActiveQuestion(selectedQuestions[0]);
     setIsSubmitted(false);
     setSelectedOption(null);
     setGameState('QUIZ');
